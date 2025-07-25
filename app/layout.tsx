@@ -74,6 +74,11 @@ export default function RootLayout({
       <head>
         <link rel="canonical" href="https://leomeyniel.dev" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
+        <script
+          defer
+          src="https://cloud.umami.is/script.js"
+          data-website-id="89e98385-16ad-4933-bfbd-e7e09ca7f311"
+        ></script>
       </head>
       <body className="antialiased">
         <PersonStructuredData
