@@ -97,7 +97,7 @@ export function NotesClient({ notes }: NotesClientProps) {
             </p>
           </div>
         ) : (
-          <ScrollArea className="h-[calc(100vh-200px)]">
+          <ScrollArea className="h-[calc(100vh-200px)] md:h-auto">
             <div className="grid gap-4">
               {notes.map((note, index) => (
                 <AnimatedCard key={note.slug} delay={index * 0.05}>
@@ -122,7 +122,7 @@ export function NotesClient({ notes }: NotesClientProps) {
                         <div className="flex-1 min-w-0">
                           <div className="flex items-start justify-between mb-2">
                             <h3
-                              className="text-sm font-medium leading-tight"
+                              className="text-sm font-medium leading-tight truncate w-64 md:w-auto"
                               style={{ color: colors.fg }}
                             >
                               {note.frontmatter.title}

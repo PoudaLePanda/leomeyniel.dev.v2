@@ -77,7 +77,7 @@ export default function LifeDashboard({ notes, projects }: LifeDashboardProps) {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="flex gap-4 my-6"
+        className="flex gap-4 my-6 flex-wrap"
         aria-label="Catégories de compétences"
       >
         {categories.map((category) => (
@@ -118,7 +118,7 @@ export default function LifeDashboard({ notes, projects }: LifeDashboardProps) {
               cahier
             </h2>
           </div>
-          <ScrollArea className="h-96">
+          <ScrollArea className="h-48 md:h-96">
             <div className="space-y-2">
               {dashboardNotes.length === 0 ? (
                 <div className="text-center py-8">
@@ -145,7 +145,7 @@ export default function LifeDashboard({ notes, projects }: LifeDashboardProps) {
                         </div>
                         <div className="flex-1 min-w-0">
                           <div
-                            className="text-sm truncate"
+                            className="text-sm truncate w-64 md:w-auto"
                             style={{ color: colors.fg }}
                           >
                             {note.frontmatter.title}

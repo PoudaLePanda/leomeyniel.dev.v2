@@ -89,7 +89,7 @@ export default function MdxLayout({ children, frontmatter }: MdxLayoutProps) {
       {/* Contenu MDX avec styles personnalisés utilisant le thème */}
       <div className="p-6 max-w-4xl mx-auto">
         <div
-          className="prose prose-lg max-w-none mb-8"
+          className="prose prose-sm md:prose-lg max-w-none mb-8"
           style={
             {
               color: colors.fg,

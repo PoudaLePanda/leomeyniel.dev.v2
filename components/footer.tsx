@@ -11,7 +11,7 @@ export function Footer() {
 
   return (
     <div
-      className="flex items-center justify-center gap-4 text-xs"
+      className="flex items-center justify-center gap-4 text-xs flex-wrap"
       style={{ color: colors.grey1 }}
     >
       <div className="mb-4 text-sm text-center sm:mb-0">
@@ -22,9 +22,9 @@ export function Footer() {
         . All rights reserved.
       </div>
 
-      <span className="flex-1"></span>
+      <span className="flex-1 hidden md:block"></span>
 
-      <div className="flex justify-center items-center space-x-1 gap-6">
+      <div className="flex justify-center items-center space-x-1 gap-6 w-full md:w-auto">
         <Link
           target="_blank"
           href="https://www.linkedin.com/in/leo-meyniel-dev-full-stack/"
@@ -41,7 +41,7 @@ export function Footer() {
         </Link>
       </div>
 
-      <span className="flex-1"></span>
+      <span className="flex-1 hidden md:block"></span>
 
       <div className="mb-4 text-sm text-center sm:mb-0">
         <Link href="/mentions-legales">mentions légales</Link>
