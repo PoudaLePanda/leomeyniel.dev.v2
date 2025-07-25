@@ -71,19 +71,24 @@ export default function LifeDashboard({ notes, projects }: LifeDashboardProps) {
   const dashboardProjects = projects.slice(0, 3);
 
   return (
-    <>
+    <main role="main">
       {/* Categories */}
       <motion.section
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         className="flex gap-4 my-6"
+        aria-label="Catégories de compétences"
       >
         {categories.map((category) => (
           <div
             key={category.name}
-            className="px-3 py-1 rounded text-sm font-medium text-white"
-            style={{ backgroundColor: category.color }}
+            className="px-3 py-1 rounded text-sm font-medium"
+            style={{
+              backgroundColor: category.color,
+              color: colors.bg0, // Utiliser la couleur de fond du thème pour le texte
+            }}
+            role="presentation"
           >
             {category.name}
           </div>
@@ -98,10 +103,20 @@ export default function LifeDashboard({ notes, projects }: LifeDashboardProps) {
         className="grid grid-cols-1 lg:grid-cols-2 gap-8"
       >
         {/* Notebook Section */}
-        <div>
+        <section aria-labelledby="notes-heading">
           <div className="flex items-center gap-2 mb-4">
-            <Notebook className="w-5 h-5" />
-            <h2 className="text-lg font-semibold">cahier</h2>
+            <Notebook
+              className="w-5 h-5"
+              aria-hidden="true"
+              style={{ color: colors.fg }}
+            />
+            <h2
+              id="notes-heading"
+              className="text-lg font-semibold"
+              style={{ color: colors.fg }}
+            >
+              cahier
+            </h2>
           </div>
           <ScrollArea className="h-96">
             <div className="space-y-2">
@@ -173,13 +188,23 @@ export default function LifeDashboard({ notes, projects }: LifeDashboardProps) {
               )}
             </div>
           </ScrollArea>
-        </div>
+        </section>
 
         {/* Projects Section */}
-        <div>
+        <section aria-labelledby="projects-heading">
           <div className="flex items-center gap-2 mb-4">
-            <FolderOpen className="w-5 h-5" />
-            <h2 className="text-lg font-semibold">projets</h2>
+            <FolderOpen
+              className="w-5 h-5"
+              aria-hidden="true"
+              style={{ color: colors.fg }}
+            />
+            <h2
+              id="projects-heading"
+              className="text-lg font-semibold"
+              style={{ color: colors.fg }}
+            >
+              projets
+            </h2>
           </div>
           <div className="space-y-4">
             {dashboardProjects.length === 0 ? (
@@ -249,7 +274,7 @@ export default function LifeDashboard({ notes, projects }: LifeDashboardProps) {
               </div>
             )}
           </div>
-        </div>
+        </section>
       </motion.section>
 
       {/* Professional Links Section */}
@@ -257,6 +282,7 @@ export default function LifeDashboard({ notes, projects }: LifeDashboardProps) {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.4 }}
+        aria-label="Expérience professionnelle"
       >
         <Timeline />
       </motion.section>
@@ -265,9 +291,10 @@ export default function LifeDashboard({ notes, projects }: LifeDashboardProps) {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.4 }}
+        aria-label="Compétences techniques"
       >
         <Skills />
       </motion.section>
-    </>
+    </main>
   );
 }

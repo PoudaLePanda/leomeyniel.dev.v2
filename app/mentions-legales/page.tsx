@@ -5,14 +5,14 @@ import { notFound } from "next/navigation";
 export default async function TermsPage() {
   try {
     // Récupérer le contenu du fichier MDX
-    const termsFile = await getMdxFileBySlug("", "terms");
+    const termsFile = await getMdxFileBySlug("", "mentions-legales");
 
     if (!termsFile) {
       notFound();
     }
 
     // Import dynamique du fichier MDX
-    const TermsComponent = await import("../../content/terms.mdx");
+    const TermsComponent = await import("../../content/mentions-legales.mdx");
 
     if (!TermsComponent.default) {
       notFound();
@@ -24,10 +24,7 @@ export default async function TermsPage() {
       </MdxLayout>
     );
   } catch (error) {
-    console.error(
-      "Erreur lors du chargement des conditions d'utilisation:",
-      error
-    );
+    console.error("Erreur lors du chargement des mentions légales:", error);
     notFound();
   }
 }

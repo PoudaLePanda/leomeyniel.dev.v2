@@ -3,9 +3,17 @@ import LifeDashboard from "../components/life-dashboard";
 import { getMdxFiles } from "../lib/mdx-utils";
 
 export const metadata: Metadata = {
-  title: "Léo Meyniel - Portfolio Développeur Full Stack",
-  description: "Système de gestion des connaissances personnelles et portfolio de développeur",
-  generator: "v0.dev",
+  title: "Accueil",
+  description: "Portfolio de Léo Meyniel, développeur full stack passionné par React, Next.js et les technologies modernes. Découvrez mes projets, compétences et expériences professionnelles.",
+  openGraph: {
+    title: "Léo Meyniel - Développeur Full Stack | Portfolio",
+    description: "Découvrez le portfolio de Léo Meyniel, développeur full stack spécialisé en React, Next.js, TypeScript et Node.js.",
+    url: "https://leomeyniel.dev",
+    type: "website",
+  },
+  alternates: {
+    canonical: "https://leomeyniel.dev",
+  },
 };
 
 export default async function Page() {

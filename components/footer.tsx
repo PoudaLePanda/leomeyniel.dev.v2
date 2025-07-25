@@ -44,7 +44,7 @@ export function Footer() {
       <span className="flex-1"></span>
 
       <div className="mb-4 text-sm text-center sm:mb-0">
-        <Link href="/terms">terms</Link> • <Link href="/privacy">privacy</Link>
+        <Link href="/mentions-legales">mentions légales</Link>
       </div>
     </div>
   );

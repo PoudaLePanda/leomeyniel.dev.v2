@@ -1,3 +1,8 @@
+"use client";
+import { useTheme } from "../contexts/theme-context";
+import { everforestTheme } from "../lib/everforest-theme";
+import MdxContentWrapper from "./mdx-content-wrapper";
+
 interface MdxLayoutProps {
   children: React.ReactNode;
   frontmatter?: {
@@ -12,22 +17,33 @@ interface MdxLayoutProps {
 }
 
 export default function MdxLayout({ children, frontmatter }: MdxLayoutProps) {
+  const { theme } = useTheme();
+  const colors = everforestTheme[theme];
   return (
-    <div className="min-h-screen font-mono transition-colors duration-200 bg-background text-foreground">
+    <div
+      className="min-h-screen font-mono transition-colors duration-200"
+      style={{ backgroundColor: colors.bg0, color: colors.fg }}
+    >
       {/* Header avec métadonnées si fournies */}
       {frontmatter && (
-        <div className="p-6 border-b border-border">
-          <h1 className="text-3xl font-bold mb-4 text-foreground">
+        <div className="p-4">
+          <h1
+            className="text-2xl font-semibold mb-2"
+            style={{ color: colors.fg }}
+          >
             {frontmatter.title}
           </h1>
 
           {frontmatter.excerpt && (
-            <p className="text-lg mb-4 text-muted-foreground">
+            <p className="text-sm mb-3" style={{ color: colors.grey2 }}>
               {frontmatter.excerpt}
             </p>
           )}
 
-          <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
+          <div
+            className="flex flex-wrap items-center gap-3 text-xs"
+            style={{ color: colors.grey1 }}
+          >
             {frontmatter.author && (
               <>
                 <span>Par {frontmatter.author}</span>
@@ -38,7 +54,13 @@ export default function MdxLayout({ children, frontmatter }: MdxLayoutProps) {
             {frontmatter.type && (
               <>
                 <span>•</span>
-                <span className="px-2 py-1 rounded text-xs font-medium text-white bg-primary">
+                <span
+                  className="px-2 py-0.5 rounded text-xs font-medium"
+                  style={{
+                    backgroundColor: colors.blue,
+                    color: colors.bg0,
+                  }}
+                >
                   {frontmatter.type}
                 </span>
               </>
@@ -46,11 +68,15 @@ export default function MdxLayout({ children, frontmatter }: MdxLayoutProps) {
           </div>
 
           {frontmatter.tags && frontmatter.tags.length > 0 && (
-            <div className="flex gap-2 mt-3">
+            <div className="flex gap-1 mt-2">
               {frontmatter.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="px-2 py-1 rounded text-xs bg-secondary text-secondary-foreground"
+                  className="px-1.5 py-0.5 rounded text-xs"
+                  style={{
+                    backgroundColor: colors.bg2,
+                    color: colors.grey1,
+                  }}
                 >
                   {tag}
                 </span>
@@ -60,10 +86,59 @@ export default function MdxLayout({ children, frontmatter }: MdxLayoutProps) {
         </div>
       )}
 
-      {/* Contenu MDX avec styles Tailwind Typography */}
+      {/* Contenu MDX avec styles personnalisés utilisant le thème */}
       <div className="p-6 max-w-4xl mx-auto">
-        <div className="prose prose-lg max-w-none prose-headings:font-semibold prose-headings:text-current prose-h1:text-4xl prose-h2:text-3xl prose-h3:text-2xl prose-h4:text-xl prose-h5:text-lg prose-h6:text-base prose-p:text-current prose-p:leading-relaxed prose-strong:text-current prose-em:text-muted-foreground prose-code:text-primary prose-code:bg-secondary prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-pre:bg-secondary prose-pre:text-secondary-foreground prose-blockquote:border-l-4 prose-blockquote:border-primary prose-blockquote:pl-4 prose-blockquote:italic prose-blockquote:text-muted-foreground prose-ul:text-current prose-ol:text-current prose-li:text-current prose-a:text-primary prose-a:no-underline hover:prose-a:underline dark:prose-invert">
-          {children}
+        <div
+          className="prose prose-lg max-w-none mb-8"
+          style={
+            {
+              color: colors.fg,
+              "--tw-prose-headings": colors.fg,
+              "--tw-prose-h1": colors.aqua,
+              "--tw-prose-h2": colors.blue,
+              "--tw-prose-h3": colors.green,
+              "--tw-prose-h4": colors.purple,
+              "--tw-prose-h5": colors.orange,
+              "--tw-prose-h6": colors.fg,
+              "--tw-prose-body": colors.fg,
+              "--tw-prose-lead": colors.grey2,
+              "--tw-prose-links": colors.blue,
+              "--tw-prose-bold": colors.fg,
+              "--tw-prose-counters": colors.grey1,
+              "--tw-prose-bullets": colors.grey1,
+              "--tw-prose-hr": colors.bg5,
+              "--tw-prose-quotes": colors.grey2,
+              "--tw-prose-quote-borders": colors.bg5,
+              "--tw-prose-captions": colors.grey1,
+              "--tw-prose-code": colors.aqua,
+              "--tw-prose-pre-code": colors.fg,
+              "--tw-prose-pre-bg": colors.bg2,
+              // "--tw-prose-pre-border": colors.bg5,
+              // "--tw-prose-th-borders": colors.bg5,
+              // "--tw-prose-td-borders": colors.bg5,
+              "--tw-prose-invert-headings": colors.fg,
+              "--tw-prose-invert-body": colors.fg,
+              "--tw-prose-invert-lead": colors.grey2,
+              "--tw-prose-invert-links": colors.blue,
+              "--tw-prose-invert-bold": colors.fg,
+              "--tw-prose-invert-counters": colors.grey1,
+              "--tw-prose-invert-bullets": colors.grey1,
+              "--tw-prose-invert-hr": colors.bg5,
+              "--tw-prose-invert-quotes": colors.grey2,
+              "--tw-prose-invert-quote-borders": colors.bg5,
+              "--tw-prose-invert-captions": colors.grey1,
+              "--tw-prose-invert-code": colors.aqua,
+              "--tw-prose-invert-pre-code": colors.fg,
+              "--tw-prose-invert-pre-bg": colors.bg2,
+              "--tw-prose-invert-pre-border": colors.bg5,
+              "--tw-prose-invert-th-borders": colors.bg5,
+              "--tw-prose-invert-td-borders": colors.bg5,
+            } as React.CSSProperties
+          }
+        >
+          <MdxContentWrapper frontmatter={frontmatter}>
+            {children}
+          </MdxContentWrapper>
         </div>
       </div>
     </div>

@@ -36,6 +36,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
         style={{
           backgroundColor: colors.bg0,
           color: colors.fg,
+          transition: "background-color 0.3s ease, color 0.3s ease",
         }}
       >
         {children}
