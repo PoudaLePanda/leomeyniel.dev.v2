@@ -10,7 +10,7 @@ interface ProjectPageProps {
 
 // Génération des paramètres statiques
 export async function generateStaticParams() {
-  const slugs = await getMdxSlugs("content/projects");
+  const slugs = await getMdxSlugs("projects");
   return slugs.map((slug) => ({
     projectName: slug,
   }));
@@ -19,10 +19,7 @@ export async function generateStaticParams() {
 export default async function ProjectPage({ params }: ProjectPageProps) {
   try {
     // Récupérer les métadonnées du fichier MDX
-    const mdxFile = await getMdxFileBySlug(
-      "content/projects",
-      params.projectName
-    );
+    const mdxFile = await getMdxFileBySlug("projects", params.projectName);
 
     if (!mdxFile) {
       notFound();

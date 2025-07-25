@@ -23,7 +23,7 @@ export default function NotFound() {
         </div>
         <h1 className="text-xl font-semibold mb-2">Note non trouvée</h1>
         <p className="mb-6" style={{ color: colors.grey2 }}>
-          La note demandée n'existe pas ou n'a pas pu être chargée.
+          La note demandée n&apos;existe pas ou n&apos;a pas pu être chargée.
         </p>
         <Link
           href="/notes"

@@ -22,13 +22,13 @@ const SelectedSkill = ({ skill, index }: SelectedSkillProps) => {
         return colors.blue;
       case "backend":
         return colors.green;
-      case "tools":
+      case "outils":
         return colors.orange;
-      case "ai":
+      case "ia":
         return colors.purple;
-      case "deployment":
+      case "déploiement":
         return colors.red;
-      case "database":
+      case "base de données":
         return colors.aqua;
       default:
         return colors.grey1;

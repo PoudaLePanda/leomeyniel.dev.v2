@@ -2,14 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import {
-  ArrowLeft,
-  FolderOpen,
-  Calendar,
-  User,
-  Tag,
-  AlertCircle,
-} from "lucide-react";
+import { ArrowLeft, FolderOpen, Calendar, User, Tag } from "lucide-react";
 import Link from "next/link";
 import { useTheme } from "../../contexts/theme-context";
 import { everforestTheme } from "../../lib/everforest-theme";
@@ -81,7 +74,7 @@ export function ProjectsClient({ projects }: ProjectsClientProps) {
             </div>
             <h2 className="text-lg font-semibold mb-2">Aucun projet trouvé</h2>
             <p style={{ color: colors.grey2 }}>
-              Aucun fichier MDX n'a été trouvé dans le dossier content/projects.
+              Aucun projet n&apos;a été trouvé dans le dossier.
             </p>
           </div>
         ) : (

@@ -5,8 +5,8 @@ interface MdxLayoutProps {
     status?: string;
     type?: string;
     lastModified: string;
-    author: string;
-    tags: string[];
+    author?: string;
+    tags?: string[];
     excerpt?: string;
   };
 }
@@ -28,8 +28,12 @@ export default function MdxLayout({ children, frontmatter }: MdxLayoutProps) {
           )}
 
           <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
-            <span>Par {frontmatter.author}</span>
-            <span>•</span>
+            {frontmatter.author && (
+              <>
+                <span>Par {frontmatter.author}</span>
+                <span>•</span>
+              </>
+            )}
             <span>Modifié le {frontmatter.lastModified}</span>
             {frontmatter.type && (
               <>
@@ -41,7 +45,7 @@ export default function MdxLayout({ children, frontmatter }: MdxLayoutProps) {
             )}
           </div>
 
-          {frontmatter.tags.length > 0 && (
+          {frontmatter.tags && frontmatter.tags.length > 0 && (
             <div className="flex gap-2 mt-3">
               {frontmatter.tags.map((tag) => (
                 <span

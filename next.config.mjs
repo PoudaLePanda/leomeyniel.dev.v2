@@ -1,5 +1,8 @@
 import createMDX from "@next/mdx";
 import remarkGfm from "remark-gfm";
+import remarkToc from "remark-toc";
+import rehypeSlug from "rehype-slug";
+import rehypeKatex from "rehype-katex";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -9,16 +12,12 @@ const nextConfig = {
 const withMDX = createMDX({
   options: {
     remarkPlugins: [
-      // Without options
-      "remark-gfm",
-      // With options
-      ["remark-toc", { heading: "The Table" }],
+      remarkGfm,
+      [remarkToc, { heading: "The Table" }],
     ],
     rehypePlugins: [
-      // Without options
-      "rehype-slug",
-      // With options
-      ["rehype-katex", { strict: true, throwOnError: true }],
+      rehypeSlug,
+      [rehypeKatex, { strict: true, throwOnError: true }],
     ],
   },
 });

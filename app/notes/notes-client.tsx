@@ -11,7 +11,6 @@ import {
   FileText,
   Camera,
   LinkIcon,
-  AlertCircle,
 } from "lucide-react";
 import Link from "next/link";
 import { useTheme } from "../../contexts/theme-context";
@@ -31,7 +30,7 @@ export function NotesClient({ notes }: NotesClientProps) {
     switch (type) {
       case "note":
         return colors.green;
-      case "research":
+      case "recherche":
         return colors.blue;
       case "article":
         return colors.purple;
@@ -45,7 +44,7 @@ export function NotesClient({ notes }: NotesClientProps) {
   const getTypeIcon = (type: string) => {
     switch (type) {
       case "note":
-      case "research":
+      case "recherche":
         return <FileText className="w-4 h-4" />;
       case "article":
         return <LinkIcon className="w-4 h-4" />;
@@ -94,7 +93,7 @@ export function NotesClient({ notes }: NotesClientProps) {
             </div>
             <h2 className="text-lg font-semibold mb-2">Aucune note trouvée</h2>
             <p style={{ color: colors.grey2 }}>
-              Aucun fichier MDX n'a été trouvé dans le dossier content/notes.
+              Aucune note n&apos;a été trouvée dans le dossier.
             </p>
           </div>
         ) : (

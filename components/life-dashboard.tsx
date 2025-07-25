@@ -29,18 +29,18 @@ export default function LifeDashboard({ notes, projects }: LifeDashboardProps) {
   const colors = everforestTheme[theme];
 
   const categories = [
-    { name: "library", color: colors.orange },
-    { name: "university", color: colors.purple },
-    { name: "business", color: colors.red },
-    { name: "wallet", color: colors.green },
-    { name: "health", color: colors.blue },
-    { name: "learning", color: colors.aqua },
+    { name: "frontend", color: colors.blue },
+    { name: "backend", color: colors.green },
+    { name: "ia", color: colors.aqua },
+    { name: "fullstack", color: colors.purple },
+    { name: "outils", color: colors.orange },
+    { name: "database", color: colors.red },
   ];
 
   const getTypeIcon = (type: string) => {
     switch (type) {
       case "note":
-      case "research":
+      case "recherche":
         return <FileText className="w-3 h-3" />;
       case "article":
         return <LinkIcon className="w-3 h-3" />;
@@ -53,13 +53,13 @@ export default function LifeDashboard({ notes, projects }: LifeDashboardProps) {
 
   const getStatusColor = (status: string) => {
     switch (status) {
-      case "business":
+      case "affaires":
         return colors.red;
-      case "academic":
+      case "académique":
         return colors.blue;
-      case "personal":
+      case "personnel":
         return colors.orange;
-      case "technical":
+      case "technique":
         return colors.green;
       default:
         return colors.grey1;
@@ -77,7 +77,7 @@ export default function LifeDashboard({ notes, projects }: LifeDashboardProps) {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="flex gap-4 mb-8"
+        className="flex gap-4 my-6"
       >
         {categories.map((category) => (
           <div
@@ -101,7 +101,7 @@ export default function LifeDashboard({ notes, projects }: LifeDashboardProps) {
         <div>
           <div className="flex items-center gap-2 mb-4">
             <Notebook className="w-5 h-5" />
-            <h2 className="text-lg font-semibold">notebook</h2>
+            <h2 className="text-lg font-semibold">cahier</h2>
           </div>
           <ScrollArea className="h-96">
             <div className="space-y-2">
@@ -179,7 +179,7 @@ export default function LifeDashboard({ notes, projects }: LifeDashboardProps) {
         <div>
           <div className="flex items-center gap-2 mb-4">
             <FolderOpen className="w-5 h-5" />
-            <h2 className="text-lg font-semibold">projects</h2>
+            <h2 className="text-lg font-semibold">projets</h2>
           </div>
           <div className="space-y-4">
             {dashboardProjects.length === 0 ? (

@@ -5,6 +5,7 @@ import { Linkedin, Github, Mail } from "lucide-react";
 import { useTheme } from "../contexts/theme-context";
 import { everforestTheme } from "../lib/everforest-theme";
 import { ThemeToggle } from "./theme-toggle";
+import Image from "next/image";
 
 export function Navigation() {
   const { theme } = useTheme();
@@ -18,14 +19,12 @@ export function Navigation() {
             className="w-8 h-8 rounded-full flex items-center justify-center"
             style={{ backgroundColor: colors.fg }}
           >
-            <div className="font-bold text-sm" style={{ color: colors.bg0 }}>
-              LM
-            </div>
+            <Image src="/logo.png" alt="Léo Meyniel" width={40} height={40} />
             <span className="sr-only">Léo Meyniel .dev</span>
           </div>
           <span className="text-xl font-bold">.dev 2.0</span>
         </Link>
-        <Link href="/projects">Projects</Link>
+        <Link href="/projects">Projets</Link>
         <Link href="/notes">Notes</Link>
       </nav>
 

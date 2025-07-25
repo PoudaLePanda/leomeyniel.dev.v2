@@ -23,7 +23,7 @@ export default function NotFound() {
         </div>
         <h1 className="text-xl font-semibold mb-2">Projet non trouvé</h1>
         <p className="mb-6" style={{ color: colors.grey2 }}>
-          Le projet demandé n'existe pas ou n'a pas pu être chargé.
+          Le projet demandé n&apos;existe pas ou n&apos;a pas pu être chargé.
         </p>
         <Link
           href="/projects"
