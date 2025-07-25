@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, Children, isValidElement, cloneElement } from "react";
+import { ReactNode, Children } from "react";
 
 interface MdxContentWrapperProps {
   children: ReactNode;
