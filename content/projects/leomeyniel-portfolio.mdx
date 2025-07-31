@@ -1,260 +1,110 @@
 ---
-title: "Portfolio Léo Meyniel - L'Art de l'Innovation Numérique"
-status: "technique"
-lastModified: "25 juillet 2025"
-author: "Léo Meyniel"
-tags: ["nextjs", "typescript", "tailwindcss", "mdx", "portfolio", "performance", "accessibility", "seo"]
-excerpt: "Portfolio Full Stack de nouvelle génération combinant performance brutale, design épuré et innovation technique. Architecture scalable avec Next.js 14, TypeScript et thème Everforest personnalisé."
+title: Portfolio Léo Meyniel
+type: projet
+tags:
+  - portfolio
+  - Projet
+  - nextjs
+  - mdx
+  - shadcn-ui
+lastModified: 25 juillet 2025
+status: technique
+excerpt: Portfolio personnel développé avec Next.js 14, TypeScript et Tailwind CSS.
 ---
 
-# Portfolio Léo Meyniel - Révolutionner l'Art du Portfolio Numérique
+# leomeyniel.dev
 
-> *"Dans un monde numérique en constante évolution, ce portfolio n'est pas juste un site web - c'est une expérience immersive qui redéfinit les standards du développement moderne."*
-
-## 🎯 Vision du Projet
-
-**leomeyniel.dev** représente l'aboutissement de mois de réflexion et de développement pour créer un portfolio qui transcende les conventions. Cette vitrine technologique d'exception combine **performance brutale**, **design épuré** et **innovation technique** pour impressionner les plus grands leaders technologiques.
-
-### 🏆 Objectifs Stratégiques
-
-- **Démontrer l'excellence technique** à travers chaque ligne de code
-- **Offrir une expérience utilisateur parfaite** sur tous les dispositifs  
-- **Atteindre des performances 100/100** sur tous les métriques Lighthouse
-- **Assurer une accessibilité universelle** conforme WCAG 2.1 AA
-
-## 🚀 Démonstration Live
+Portfolio personnel développé avec Next.js 14, TypeScript et Tailwind CSS.
 
 [![Portfolio Live](https://img.shields.io/badge/🌐_Portfolio_Live-leomeyniel.dev-4CAF50?style=for-the-badge)](https://leomeyniel.dev)
-[![GitHub](https://img.shields.io/badge/💻_Code_Source-PoudaLePanda/leomeyniel.dev-FF5722?style=for-the-badge)](https://github.com/PoudaLePanda/leomeyniel.dev)
-[![Contact](https://img.shields.io/badge/📧_Contact-contact@leomeyniel.dev-FF6B6B?style=for-the-badge)](mailto:contact@leomeyniel.dev)
 
-## 🏗️ Architecture Technique de Pointe
+[![Next.js](https://img.shields.io/badge/Next.js-14-black)](https://nextjs.org/)
 
-### 🧠 Stack Technologique Elite
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)](https://www.typescriptlang.org/)
 
-```typescript
-const techStack = {
-  // Frontend Révolutionnaire
-  framework: "Next.js 14.2 avec App Router",
-  language: "TypeScript 5.0 - Type Safety Absolue",
-  styling: "Tailwind CSS 3.4 - Atomic Design", 
-  animations: "Framer Motion - Expériences Fluides",
-  
-  // UI/UX Excellence
-  components: "Radix UI + Shadcn/UI - Composants Premium",
-  theme: "Everforest - Thème Sombre/Clair Personnalisé",
-  typography: "Geist Sans/Mono - Typographie Moderne",
-  
-  // Contenu Dynamique
-  content: "MDX avec Gray-Matter - Publication Intelligente",
-  markdown: "Remark/Rehype - Traitement Avancé",
-  
-  // Performance & SEO
-  optimization: "Bundle Analysis + Core Web Vitals",
-  seo: "Schema.org + Open Graph + Sitemap Dynamique",
-  accessibility: "WCAG 2.1 AA - Standards Professionnels"
-};
-```
+## Vue d'ensemble
 
-### 🎨 Design System Révolutionnaire
+Ce projet est un portfolio personnel construit pour présenter mes compétences et projets en tant que développeur full stack. Il utilise Next.js avec l'App Router pour une architecture moderne et des performances optimisées.
 
-```scss
-// Thème Everforest scientifiquement optimisé
-$everforest-dark: #2d353b;     // Background apaisant 
-$everforest-light: #fdf6e3;   // Background clair élégant
-$everforest-accent: #7fbbb3;  // Bleu cyan énergique
-$everforest-success: #a7c080; // Vert nature harmonieux
-$everforest-text: #d3c6aa;    // Texte doux pour les yeux
+Le site intègre un système de gestion de contenu basé sur MDX pour les articles et projets, avec support des thèmes sombre/clair et une interface responsive.
 
-// Typographie premium
-font-family: 'Geist Sans', 'Inter', system-ui;
-font-weights: 300, 400, 500, 600, 700;
-```
+---
 
-## ⚡ Fonctionnalités Révolutionnaires
+## Stack technique
 
-### 🎭 Expérience Utilisateur Magistrale
+### Technologies principales
 
-#### **Dashboard Interactif**
-- **Life Dashboard** avec navigation intuitive
-- **Catégories visuelles** des compétences techniques
-- **Timeline professionnelle** interactive avec Framer Motion
-- **Mode sombre/clair** avec transitions fluides
+- **Framework** : Next.js 14 avec App Router
 
-```typescript
-// Exemple de thème adaptatif
-const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
-  const [theme, setTheme] = useState<'dark' | 'light'>('dark');
-  const colors = everforestTheme[theme];
-  
-  return (
-    <div style={{
-      backgroundColor: colors.bg0,
-      color: colors.fg,
-      transition: 'background-color 0.3s ease, color 0.3s ease'
-    }}>
-      {children}
-    </div>
-  );
-};
-```
+- **Language** : TypeScript 5.0
 
-#### **Système de Contenu MDX Intelligent**
-- **Notes techniques** avec syntaxe highlighting
-- **Portfolio projets** avec métadonnées riches
-- **Recherche sémantique** intégrée
-- **Navigation contextuelle** optimisée
+- **Styling** : Tailwind CSS + Shadcn/UI
 
-### 📊 Architecture Modulaire Avancée
+- **Animations** : Framer Motion
 
-#### **Composants Réutilisables**
-- **AnimatedCard** avec micro-interactions
-- **Timeline** professionnelle dynamique  
-- **Skills** avec descriptions détaillées
-- **Navigation** responsive avec état actif
+- **Content** : MDX avec Gray Matter
 
-#### **Gestion d'État Élégante**
-- **Context API** pour le thème global
-- **Local Storage** pour persistance des préférences
-- **State Management** optimisé sans Redux
+- **Thèmes** : Support clair/sombre
 
-```typescript
-// Structure modulaire des composants
-const LifeDashboard = ({ notes, projects }: LifeDashboardProps) => {
-  const { theme } = useTheme();
-  const colors = everforestTheme[theme];
-  
-  return (
-    <motion.main
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-    >
-      {/* Contenu avec animations fluides */}
-    </motion.main>
-  );
-};
-```
+- **Typographie** : Geist Sans & Mono
 
-## 📈 Performances Exceptionnelles
+### Outils de développement
 
-### ⚡ Métriques Lighthouse Parfaites
+- **Package Manager** : pnpm
 
-```bash
-🟢 Performance Score: 98/100
-🟢 Accessibility: 100/100  
-🟢 Best Practices: 100/100
-🟢 SEO Score: 100/100
+- **UI Components** : Radix UI + Shadcn/UI
 
-⚡ First Contentful Paint: < 1.2s
-⚡ Time to Interactive: < 2.5s
-⚡ Cumulative Layout Shift: < 0.1
-🎯 Core Web Vitals: All Green
-```
+- **Content Processing** : Remark/Rehype plugins
 
-### 🌍 Optimisations Techniques
+- **State Management** : React Context API
 
-- **Static Site Generation** avec Next.js App Router
-- **Image Optimization** automatique WebP/AVIF
-- **Code Splitting** intelligent par route
-- **Bundle Analysis** pour optimisation continue
+- **Quality** : ESLint + TypeScript strict mode
 
-## 💎 Innovations Techniques Exclusives
+---
 
-### 🧪 Architecture Patterns Avancés
+## Fonctionnalités
 
-#### **MDX Pipeline Intelligent**
-Système de traitement de contenu qui combine Markdown et React pour une flexibilité maximale.
+### Interface utilisateur
 
-```typescript
-// Utilitaires MDX personnalisés
-export async function getMdxFileBySlug(
-  directory: 'notes' | 'projects', 
-  slug: string
-): Promise<MdxFile | null> {
-  const filePath = path.join(process.cwd(), 'content', directory, `${slug}.mdx`);
-  
-  if (!fs.existsSync(filePath)) return null;
-  
-  const fileContent = fs.readFileSync(filePath, 'utf8');
-  const { data: frontmatter } = matter(fileContent);
-  
-  return {
-    slug,
-    frontmatter: frontmatter as Frontmatter,
-    content: fileContent
-  };
-}
-```
+- Dashboard principal avec navigation responsive
 
-#### **Theme System Everforest™**
-Système de thème scientifiquement optimisé pour réduire la fatigue oculaire et améliorer la lisibilité.
+- Système de thèmes (clair/sombre/everforest)
 
-#### **Responsive Design Mobile-First**
-Interface qui s'adapte parfaitement à tous les écrans avec des breakpoints optimisés.
+- Animations avec Framer Motion
 
-### 🔬 Accessibilité & SEO Premium
+- Design mobile-first
 
-- **ARIA Labels** complets pour lecteurs d'écran
-- **Navigation clavier** optimisée  
-- **Contraste couleurs** conforme WCAG 2.1 AA
-- **Schema.org** pour référencement structuré
+### Gestion de contenu
 
-```typescript
-// Exemple d'accessibilité avancée
-<section aria-labelledby="notes-heading">
-  <h2 id="notes-heading" className="text-lg font-semibold">
-    cahier
-  </h2>
-  <div role="list">
-    {notes.map(note => (
-      <div key={note.slug} role="listitem">
-        <Link href={`/notes/${note.slug}`} aria-label={`Lire la note: ${note.title}`}>
-          {/* Contenu accessible */}
-        </Link>
-      </div>
-    ))}
-  </div>
-</section>
-```
+- Articles techniques organisés par catégories
 
-## 🎨 Expérience Utilisateur Exceptionnelle
+- Portfolio de projets avec métadonnées
 
-### 🚀 Interface Révolutionnaire
+- Navigation contextuelle
 
-- **Micro-interactions** soignées avec Framer Motion
-- **Transitions fluides** entre les pages
-- **Feedback visuel** instantané sur les interactions
-- **Progressive Enhancement** pour tous les navigateurs
+- Support du format MDX
 
-### 📱 Responsive Design Parfait
+### Performance et accessibilité
 
-```typescript
-// Breakpoints optimisés
-const breakpoints = {
-  sm: '640px',   // Mobile landscape
-  md: '768px',   // Tablet
-  lg: '1024px',  // Desktop
-  xl: '1280px'   // Large desktop
-};
-```
+- Scores Lighthouse élevés (98-100/100)
 
-### 🎯 Navigation Intelligente
+- Core Web Vitals optimisés
 
-- **Breadcrumbs** dynamiques selon le contexte
-- **Active states** visuels pour orientation
-- **Menu mobile** avec animations fluides
-- **Keyboard navigation** complète
+- Conformité WCAG 2.1 AA
 
-## 🏆 Architecture du Projet
+- SEO optimisé avec Schema.org
 
-### 🗂️ Structure Modulaire
+---
+
+## Architecture
+
+### Structure du projet
 
 ```
 leomeyniel.dev/
 ├── 🎯 app/                    # Next.js App Router
 │   ├── 🏠 page.tsx           # Page d'accueil avec dashboard
-│   ├── 📝 notes/             # Section articles & tutoriels  
+│   ├── 📝 notes/             # Section articles & tutoriels
 │   ├── 🚀 projects/          # Portfolio projets
 │   ├── 🤖 robots.txt/        # SEO: Directives crawlers
 │   └── 🗺️ sitemap.xml/       # SEO: Plan du site dynamique
@@ -271,103 +121,151 @@ leomeyniel.dev/
 └── 🌈 styles/              # Styles globaux Tailwind
 ```
 
-### 🔥 Code Highlights
+### Patterns techniques
 
-```typescript
-// Système de cache intelligent pour MDX
-export async function getMdxSlugs(directory: 'notes' | 'projects'): Promise<string[]> {
-  const contentDir = path.join(process.cwd(), 'content', directory);
-  
-  if (!fs.existsSync(contentDir)) {
-    return [];
-  }
-  
-  const files = fs.readdirSync(contentDir);
-  return files
-    .filter(file => file.endsWith('.mdx'))
-    .map(file => file.replace(/\.mdx$/, ''));
-}
+- Architecture basée sur les composants
+
+- Approche content-first avec MDX
+
+- Progressive enhancement
+
+- Design responsive mobile-first
+
+- Développement type-safe avec TypeScript
+
+---
+
+## Design
+
+### Système de couleurs
+
+Thème Everforest optimisé pour la lisibilité :
+
+```scss
+// Thème Everforest scientifiquement optimisé
+$everforest-dark: #2d353b; // Background apaisant
+$everforest-light: #fdf6e3; // Background clair élégant
+$everforest-accent: #7fbbb3; // Bleu cyan énergique
+$everforest-success: #a7c080; // Vert nature harmonieux
+$everforest-text: #d3c6aa; // Texte doux pour les yeux
+
+// Typographie premium
+font-family: "Geist Sans", "Inter", system-ui;
+font-weights: 300, 400, 500, 600, 700;
 ```
 
-```typescript
-// Animation système avec Framer Motion
-const AnimatedCard = ({ children, delay = 0 }: AnimatedCardProps) => (
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5, delay }}
-    whileHover={{ scale: 1.02 }}
-    whileTap={{ scale: 0.98 }}
-  >
-    {children}
-  </motion.div>
-);
+### Interactions
+
+- Transitions fluides entre pages
+
+- Effets hover subtils
+
+- États de chargement avec feedback visuel
+
+- Animations au scroll
+
+---
+
+## Performance
+
+### Métriques Lighthouse
+
 ```
 
-## 🛠️ Développement & Déploiement
+🟢 Performance Score: 98/100
+🟢 Accessibility: 100/100
+🟢 Best Practices: 100/100
+🟢 SEO Score: 100/100
 
-### ⚡ Scripts de Développement
+⚡ First Contentful Paint: < 1.2s
+⚡ Time to Interactive: < 2.5s
+⚡ Cumulative Layout Shift: < 0.1
+🎯 Core Web Vitals: All Green
+
+```
+
+### Optimisations
+
+- Static Site Generation avec Next.js
+
+- Optimisation d'images automatique (WebP/AVIF)
+
+- Code splitting par route
+
+- Analyse de bundle pour optimiser la taille
+
+---
+
+## SEO et accessibilité
+
+### Référencement
+
+- Données structurées Schema.org
+
+- Meta tags Open Graph et Twitter Cards
+
+- Sitemap XML généré dynamiquement
+
+- Meta descriptions contextuelles
+
+- URLs canoniques
+
+### Accessibilité
+
+- Navigation clavier complète
+
+- Support des lecteurs d'écran
+
+- Labels ARIA appropriés
+
+- Contraste des couleurs conforme WCAG 2.1 AA
+
+- Gestion du focus
+
+---
+
+## Fonctionnalités avancées
+
+### Caractéristiques modernes
+
+- Mode sombre avec persistence des préférences
+
+- Interface utilisateur optimiste
+
+- Gestion d'erreurs avec Error Boundaries
+
+- Stratégies de fallback
+
+### Extensibilité
+
+- Bibliothèque de composants extensible
+
+- Architecture prête pour l'internationalisation
+
+- Intégration d'APIs externes facilitée
+
+---
+
+## Développement
+
+### Commandes
 
 ```bash
+
 pnpm dev          # 🚀 Serveur de développement
-pnpm build        # 📦 Build de production optimisé  
+pnpm build        # 📦 Build de production optimisé
 pnpm start        # 🌐 Serveur de production
 pnpm lint         # 🔍 Analyse qualité du code
 pnpm type-check   # 📝 Vérification TypeScript
+
 ```
-
-### 🌐 Déploiement Production
-
-- **Hébergement**: Scalingo avec domaine personnalisé
-- **CDN**: Optimisation automatique des assets
-- **Monitoring**: Analytics et Core Web Vitals
-- **CI/CD**: Déploiement automatique depuis Git
-
-## 🌟 Impact & Résultats
-
-### 📊 Métriques de Succès
-
-```json
-{
-  "lighthouse_performance": "98/100",
-  "accessibility_score": "100/100", 
-  "seo_optimization": "100/100",
-  "core_web_vitals": "All Green",
-  "bundle_size": "< 200KB",
-  "load_time": "< 1.2s",
-  "mobile_performance": "96/100"
-}
-```
-
-### 🎯 Objectifs Atteints
-
-- ✅ **Performance exceptionnelle** - Scores Lighthouse parfaits
-- ✅ **Accessibilité universelle** - Conforme WCAG 2.1 AA  
-- ✅ **SEO technique avancé** - Schema.org et métadonnées optimisées
-- ✅ **Expérience utilisateur** - Navigation intuitive et design épuré
-- ✅ **Code maintenable** - Architecture modulaire et TypeScript strict
-
-## 🔮 Évolutions Futures
-
-### 🎯 Roadmap Innovation
-
-- [ ] **🤖 AI Integration** : Assistant IA pour navigation intelligente
-- [ ] **🌐 i18n Support** : Version multilingue dynamique  
-- [ ] **📊 CMS Headless** : Interface d'administration intégrée
-- [ ] **🔄 PWA Features** : Application progressive native
-- [ ] **📈 Advanced Analytics** : Dashboard métriques personnalisé
 
 ---
 
-<div align="center">
+## Contact
 
-**🚀 Ce portfolio représente l'excellence technique au service de l'innovation, démontrant qu'il est possible de créer des expériences web exceptionnelles avec les bonnes technologies et une vision claire.**
+- **Portfolio** : [leomeyniel.dev](https://leomeyniel.dev)
 
-[![Portfolio](https://img.shields.io/badge/🌐_Voir_le_Site-leomeyniel.dev-4CAF50?style=for-the-badge)](https://leomeyniel.dev)
-[![Contact](https://img.shields.io/badge/💬_Discutons_Innovation-contact@leomeyniel.dev-FF6B6B?style=for-the-badge)](mailto:contact@leomeyniel.dev)
+- **Email** : [contact@leomeyniel.dev](mailto:contact@leomeyniel.dev)
 
----
-
-*leomeyniel.dev - Où la passion rencontre l'expertise technique*
-
-</div>
+- **LinkedIn** : [leo-meyniel-dev-full-stack](https://www.linkedin.com/in/leo-meyniel-dev-full-stack/)

@@ -4,76 +4,88 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Development Commands
 
-- **Development server**: `pnpm dev` or `npm run dev`
-- **Build**: `pnpm build` or `npm run build`
-- **Production server**: `pnpm start` or `npm run start`
-- **Linting**: `pnpm lint` or `npm run lint`
+### Core Commands
+- `pnpm dev` - Start development server
+- `pnpm build` - Build production application
+- `pnpm start` - Start production server
+- `pnpm lint` - Run ESLint for code quality checks
 
-## Tech Stack
-
-- **Framework**: Next.js 14 with App Router
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS v3 with custom Everforest theme
-- **UI Components**: Radix UI primitives with custom shadcn/ui components
-- **Content**: MDX files with gray-matter for frontmatter parsing
-- **Fonts**: Geist Sans and Geist Mono
-- **Animations**: Framer Motion
-- **Linting**: ESLint with Next.js configuration
-- **Package Manager**: pnpm (based on lock file)
+### Package Management
+- Uses pnpm for package management
+- Dependencies are locked in `pnpm-lock.yaml`
 
 ## Architecture Overview
 
-### App Router Structure
-- **`app/`**: Next.js 14 App Router structure
-  - `layout.tsx`: Root layout with theme providers and font setup
-  - `page.tsx`: Homepage with LifeDashboard component
-  - `notes/`: Dynamic routes for notes with MDX content
-  - `projects/`: Dynamic routes for projects with MDX content
-  - `privacy/` and `terms/`: Static pages
+### Framework & Tech Stack
+- **Next.js 14** with App Router architecture
+- **TypeScript** for type safety
+- **Tailwind CSS** with shadcn/ui components
+- **MDX** for content management with remark/rehype plugins
+- **Framer Motion** for animations
+- **React Hook Form** with Zod validation
 
-### Content Management
-- **`content/`**: MDX files organized by type
-  - `notes/`: Note files with frontmatter (title, type, lastModified, author, tags, excerpt)
-  - `projects/`: Project files with frontmatter (title, status, excerpt, etc.)
-- **`lib/mdx-utils.ts`**: Core utilities for reading and parsing MDX files
-  - `getMdxFiles()`: Fetch all MDX files from a directory
-  - `getMdxFileBySlug()`: Get specific file by slug
-  - `getMdxSlugs()`: Get all slugs from directory
+### Project Structure
+```
+app/                    # Next.js App Router pages
+├── layout.tsx         # Root layout with metadata and providers
+├── page.tsx           # Homepage using LifeDashboard component
+├── notes/             # Notes section with dynamic routing
+├── projects/          # Projects section with dynamic routing
+└── mentions-legales/  # Legal pages
 
-### Component Architecture
-- **`components/`**: Reusable UI components
-  - `life-dashboard.tsx`: Main dashboard component displaying notes and projects
-  - `ui/`: shadcn/ui components built on Radix UI
-  - Custom components: `animated-card`, `timeline`, `skills`, etc.
-- **`contexts/theme-context.tsx`**: Custom theme system using Everforest color scheme
-- **`lib/everforest-theme.ts`**: Theme configuration with dark/light modes
+components/            # React components
+├── ui/               # shadcn/ui components
+├── life-dashboard.tsx # Main dashboard component
+├── navigation.tsx    # Site navigation
+├── theme-provider.tsx # Theme switching logic
+└── ...
 
-### Styling System
-- **Tailwind CSS v3** with custom configuration
-- **Everforest theme**: Custom color scheme implemented via CSS-in-JS, not Tailwind variables
-- **Typography plugin**: For markdown content styling
-- **Animation classes**: Custom keyframes for accordions
+content/              # MDX content files
+├── notes/           # Blog posts/notes in MDX format
+└── projects/        # Project documentation in MDX
 
-## Key Development Patterns
+lib/                 # Utility functions
+├── mdx-utils.ts    # MDX file processing utilities
+├── utils.ts        # General utilities (cn function, etc.)
+└── skills-data.ts  # Skills configuration data
 
-### MDX Content Structure
-- All content uses consistent frontmatter schema defined in `lib/mdx-utils.ts`
-- Dynamic routing handles `/notes/[noteName]` and `/projects/[projectName]`
-- Content is rendered using custom MDX components in `components/mdx-components.tsx`
+contexts/           # React contexts
+└── theme-context.tsx # Theme management (light/dark/everforest)
+```
 
-### Theme Implementation
-- Uses a custom theme context instead of next-themes
-- Colors are applied via inline styles using the `everforestTheme` object
-- Theme state persisted in localStorage with key `everforest-theme`
+### Key Components Architecture
+- **LifeDashboard**: Main homepage component displaying notes, projects, and skills
+- **MDX Integration**: Custom MDX processing with frontmatter support for metadata
+- **Theme System**: Multi-theme support (light/dark/everforest) with CSS variables
+- **Content Management**: File-based CMS using MDX files with gray-matter frontmatter parsing
 
-### Component Patterns
-- Heavy use of Framer Motion for page transitions and animations
-- Radix UI primitives wrapped in custom styled components
-- TypeScript interfaces for all component props and data structures
+### Content System
+- MDX files in `content/` directory with frontmatter metadata
+- Automatic slug generation from filenames
+- Support for notes and projects with different types and statuses
+- Frontmatter structure: `title`, `status`, `type`, `lastModified`, `author`, `tags`, `excerpt`
 
-## Configuration Notes
+### Styling & UI
+- **shadcn/ui**: Component library with Radix UI primitives
+- **Tailwind CSS**: Utility-first styling with custom theme configuration
+- **CSS Variables**: Theme-aware color system using HSL values
+- **Animations**: Framer Motion for page transitions and component animations
+- **Typography**: Geist font family (Sans & Mono variants)
 
-- **MDX**: Configured with remark-gfm, remark-toc, rehype-slug, and rehype-katex plugins
-- **TypeScript**: Strict mode enabled with path aliases (`@/*` → `./`)
-- **Tailwind**: Uses class-based dark mode and custom container configuration
-- **Next.js**: Supports MDX files as pages alongside TSX files
+### Configuration Files
+- `next.config.mjs`: Next.js configuration with MDX, security headers, and image optimization
+- `tailwind.config.ts`: Tailwind configuration with custom theme and animations
+- `components.json`: shadcn/ui configuration with aliases and styling preferences
+- `tsconfig.json`: TypeScript configuration with path aliases (`@/*` maps to `./`)
+
+### MDX Processing
+- Remark plugins: `remark-gfm`, `remark-toc`
+- Rehype plugins: `rehype-slug`, `rehype-katex` for math support
+- File processing utilities in `lib/mdx-utils.ts` for reading and parsing content
+
+### Performance & SEO
+- Comprehensive metadata configuration in layout.tsx
+- Structured data implementation for Person and Website
+- Image optimization with WebP/AVIF formats
+- Security headers configured in next.config.mjs
+- Umami analytics integration
